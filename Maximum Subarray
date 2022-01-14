@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int sum=0;
+        int tot=INT_MIN;
+        for(int i=0;i<nums.size();i++){
+           
+            if(nums[i]<=sum+nums[i]){
+                sum=sum+nums[i];
+            }
+            else{
+                sum=nums[i];
+            }
+           if(tot<sum){
+               tot=sum;
+           } 
+            
+        }
+       return tot;
+    }
+};
