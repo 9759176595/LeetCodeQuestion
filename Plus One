@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& nums) 
+    {
+        vector<int> v;
+        reverse(nums.begin(),nums.end());
+        nums[0]=nums[0]+1;
+        v.push_back(nums[0]%10);
+        int carry =nums[0]/10;
+        
+        for(int i=1;i<nums.size();i++)
+        {
+            nums[i]=nums[i]+carry;
+            v.push_back(nums[i]%10);
+            carry=nums[i]/10;
+        }
+        if(carry==1)
+            v.push_back(1);
+        reverse(v.begin(),v.end());
+        return v;
+    }
+};
