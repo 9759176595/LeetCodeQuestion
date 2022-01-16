@@ -1,0 +1,31 @@
+class Solution {
+public:
+    vector<string> divideString(string s, int k, char fill) {
+       
+        int len=s.length();
+         
+        int r=len%k;
+        if(r>0){
+            for(int i=r;i<k;i++){
+                s+=fill;
+            }
+        }
+        int len2=s.length();
+        vector<string> st(len2);
+        int p=0;
+        
+            for(int i=0;i<len2;i=i+k){
+            string str="";
+            for(int j=i;j<i+k;j++){
+                str+=s[j];
+            }
+            st[p++]=str;
+                cout<<str;
+        }
+            
+        vector<string> res(st.begin(),st.begin()+p);
+    
+        
+        return res;
+    }
+};
