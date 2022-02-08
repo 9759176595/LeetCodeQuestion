@@ -15,7 +15,7 @@ public:
             i--;
         }
         while(i>=0){
-            price+=cost[i-1];
+            price+=cost[i--];
         }
         return price;
     }
